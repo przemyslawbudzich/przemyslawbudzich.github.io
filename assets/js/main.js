@@ -247,12 +247,13 @@
   const commands = [
     { group: 'Nawigacja', icon: '↑', label: 'Start', run: go('top') },
     { group: 'Nawigacja', icon: '◎', label: 'O mnie', run: go('o-mnie') },
-    { group: 'Nawigacja', icon: '◆', label: 'Projekty', run: go('projekty') },
+    { group: 'Nawigacja', icon: '◆', label: 'Kompetencje', run: go('kompetencje') },
     { group: 'Nawigacja', icon: '↗', label: 'Doświadczenie', run: go('doswiadczenie') },
     { group: 'Nawigacja', icon: '✉', label: 'Kontakt', run: go('kontakt') },
     { group: 'Akcje', icon: '◐', label: 'Przełącz motyw', hint: 'jasny / ciemny', run: toggleTheme },
-    { group: 'Akcje', icon: '⧉', label: 'Skopiuj e-mail', hint: email, run: () => copyEmail(email) },
+    ...(email ? [{ group: 'Akcje', icon: '⧉', label: 'Skopiuj e-mail', hint: email, run: () => copyEmail(email) }] : []),
     { group: 'Linki', icon: '⌥', label: 'GitHub', hint: 'github.com', run: () => open('https://github.com/przemyslawbudzich', '_blank', 'noopener') },
+    { group: 'Linki', icon: 'in', label: 'LinkedIn', hint: 'linkedin.com', run: () => open('https://www.linkedin.com/in/przemyslaw-budzich-873bb7155', '_blank', 'noopener') },
   ];
 
   let filtered = commands;
