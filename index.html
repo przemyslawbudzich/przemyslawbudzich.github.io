@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Przemysław Budzich — Software Developer</title>
+  <meta name="description" content="Przemysław Budzich — software developer. Projekty, doświadczenie i kontakt." />
+  <meta name="theme-color" content="#07070b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Przemysław Budzich — Software Developer" />
+  <meta property="og:description" content="Projekty, doświadczenie i kontakt." />
+  <meta property="og:url" content="https://przemyslawbudzich.github.io/" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script>
+    // Ustaw motyw przed renderem, żeby nie było mignięcia
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- Tło -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__blob bg__blob--1"></div>
+    <div class="bg__blob bg__blob--2"></div>
+    <div class="bg__blob bg__blob--3"></div>
+    <div class="bg__grid"></div>
+    <div class="bg__noise"></div>
+  </div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Nawigacja -->
+  <header class="nav" data-nav>
+    <a href="#top" class="nav__logo" aria-label="Strona główna">
+      <span class="nav__mark">PB</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Główna nawigacja">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#o-mnie" data-section-link="o-mnie">O mnie</a>
+      <a href="#projekty" data-section-link="projekty">Projekty</a>
+      <a href="#doswiadczenie" data-section-link="doswiadczenie">Doświadczenie</a>
+      <a href="#kontakt" data-section-link="kontakt">Kontakt</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn kbd-btn" type="button" data-cmdk-open aria-label="Otwórz paletę poleceń">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Przełącz motyw">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn nav__burger" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero__badge reveal">
+          <span class="dot"></span>
+          Otwarty na nowe projekty
+        </div>
+
+        <h1 class="hero__title">
+          <span class="reveal-line"><span>Cześć, jestem</span></span>
+          <span class="reveal-line"><span class="gradient-text">Przemysław</span></span>
+          <span class="reveal-line"><span><em class="serif">Budzich</em><span class="hero__wave" aria-hidden="true">👋</span></span></span>
+        </h1>
+
+        <p class="hero__lead reveal">
+          Software developer, który tworzy
+          <span class="rotator" data-rotator='["szybkie aplikacje webowe", "solidne API", "dopracowane interfejsy", "narzędzia dla ludzi"]'>szybkie aplikacje webowe</span>.
+          Lubię czysty kod, dobre UX i rozwiązywanie trudnych problemów.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a href="#projekty" class="btn btn--primary magnetic">
+            Zobacz projekty
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#kontakt" class="btn btn--ghost magnetic">Napisz do mnie</a>
+        </div>
+
+        <div class="hero__meta reveal">
+          <div class="meta-item">
+            <span class="meta-item__label">Lokalizacja</span>
+            <span class="meta-item__value">Polska · <span data-clock>--:--</span></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-item__label">Specjalizacja</span>
+            <span class="meta-item__value">Full-stack / Backend</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-item__label">Teraz</span>
+            <span class="meta-item__value">Buduję coś nowego ✦</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#o-mnie" class="scroll-hint" aria-label="Przewiń w dół">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-label="Technologie">
+      <div class="marquee__track">
+        <ul>
+          <li>TypeScript</li><li>✦</li><li>Java</li><li>✦</li><li>Kotlin</li><li>✦</li><li>Spring</li><li>✦</li>
+          <li>React</li><li>✦</li><li>Node.js</li><li>✦</li><li>PostgreSQL</li><li>✦</li><li>Docker</li><li>✦</li>
+          <li>REST &amp; GraphQL</li><li>✦</li><li>CI/CD</li><li>✦</li><li>Cloud</li><li>✦</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>TypeScript</li><li>✦</li><li>Java</li><li>✦</li><li>Kotlin</li><li>✦</li><li>Spring</li><li>✦</li>
+          <li>React</li><li>✦</li><li>Node.js</li><li>✦</li><li>PostgreSQL</li><li>✦</li><li>Docker</li><li>✦</li>
+          <li>REST &amp; GraphQL</li><li>✦</li><li>CI/CD</li><li>✦</li><li>Cloud</li><li>✦</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- O MNIE -->
+    <section class="section" id="o-mnie">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">01 — O mnie</span>
+          <h2 class="section__title">Kod, który <em class="serif">ma sens</em>.</h2>
+        </header>
+
+        <div class="bento">
+          <article class="card bento__intro reveal spotlight-card">
+            <h3>Kim jestem</h3>
+            <p>
+              Jestem programistą, który lubi przechodzić całą drogę — od pomysłu, przez architekturę,
+              aż po wdrożenie i utrzymanie. Najlepiej czuję się tam, gdzie technologia spotyka
+              realne potrzeby ludzi.
+            </p>
+            <p>
+              Stawiam na prostotę, czytelność i automatyzację. Wierzę, że dobre oprogramowanie
+              to takie, którego nikt nie musi się bać zmieniać.
+            </p>
+          </article>
+
+          <article class="card bento__stat reveal spotlight-card">
+            <span class="stat__num" data-count="5" data-suffix="+">0</span>
+            <span class="stat__label">lat doświadczenia</span>
+          </article>
+
+          <article class="card bento__stat reveal spotlight-card">
+            <span class="stat__num" data-count="30" data-suffix="+">0</span>
+            <span class="stat__label">zrealizowanych projektów</span>
+          </article>
+
+          <article class="card bento__stack reveal spotlight-card">
+            <h3>Stack</h3>
+            <ul class="tags">
+              <li>TypeScript</li><li>Java</li><li>Kotlin</li><li>Spring Boot</li>
+              <li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Docker</li>
+              <li>Git</li><li>CI/CD</li><li>REST</li><li>Testy</li>
+            </ul>
+          </article>
+
+          <article class="card bento__now reveal spotlight-card">
+            <h3>Obecnie</h3>
+            <ul class="now-list">
+              <li><span class="now-list__k">Pracuję nad</span><span>nową wersją tej strony</span></li>
+              <li><span class="now-list__k">Uczę się</span><span>systemów rozproszonych</span></li>
+              <li><span class="now-list__k">Czytam</span><span>„Designing Data‑Intensive Applications”</span></li>
+            </ul>
+          </article>
+
+          <article class="card bento__globe reveal spotlight-card" aria-hidden="true">
+            <div class="orb">
+              <div class="orb__ring"></div>
+              <div class="orb__ring orb__ring--2"></div>
+              <div class="orb__core"></div>
+            </div>
+            <span class="bento__globe-label">Praca zdalna · cały świat</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTY -->
+    <section class="section" id="projekty">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">02 — Projekty</span>
+          <h2 class="section__title">Wybrane <em class="serif">realizacje</em>.</h2>
+        </header>
+
+        <div class="projects">
+          <article class="project reveal spotlight-card tilt">
+            <div class="project__visual project__visual--1" aria-hidden="true">
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body">
+                  <div class="mock__line w70"></div>
+                  <div class="mock__line w40"></div>
+                  <div class="mock__chart"><b style="--h:40%"></b><b style="--h:65%"></b><b style="--h:50%"></b><b style="--h:85%"></b><b style="--h:70%"></b><b style="--h:95%"></b></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3>Projekt Alpha</h3>
+                <span class="project__year">2026</span>
+              </div>
+              <p>Panel analityczny w czasie rzeczywistym — wizualizacja danych, filtry i eksport raportów.</p>
+              <ul class="tags tags--sm"><li>React</li><li>TypeScript</li><li>WebSocket</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/przemyslawbudzich" target="_blank" rel="noopener">Kod ↗</a>
+                <a href="#" aria-disabled="true">Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spotlight-card tilt">
+            <div class="project__visual project__visual--2" aria-hidden="true">
+              <div class="code">
+                <span><i class="c-k">@GetMapping</i>(<i class="c-s">"/api/orders"</i>)</span>
+                <span><i class="c-k">fun</i> <i class="c-f">orders</i>() = service</span>
+                <span>&nbsp;&nbsp;.<i class="c-f">findAll</i>()</span>
+                <span>&nbsp;&nbsp;.<i class="c-f">map</i>(::toDto)</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3>Projekt Beta</h3>
+                <span class="project__year">2025</span>
+              </div>
+              <p>Skalowalne API do obsługi zamówień z kolejkami, cache i pełnym pokryciem testami.</p>
+              <ul class="tags tags--sm"><li>Kotlin</li><li>Spring</li><li>PostgreSQL</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/przemyslawbudzich" target="_blank" rel="noopener">Kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spotlight-card tilt">
+            <div class="project__visual project__visual--3" aria-hidden="true">
+              <div class="term">
+                <span><i class="c-p">$</i> deploy --prod</span>
+                <span class="c-m">✓ build ukończony w 2.4s</span>
+                <span class="c-m">✓ testy: 248 / 248</span>
+                <span class="c-ok">● wdrożono pomyślnie</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3>Projekt Gamma</h3>
+                <span class="project__year">2025</span>
+              </div>
+              <p>Narzędzie CLI automatyzujące wdrożenia i pipeline CI/CD dla małych zespołów.</p>
+              <ul class="tags tags--sm"><li>Node.js</li><li>Docker</li><li>GitHub Actions</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/przemyslawbudzich" target="_blank" rel="noopener">Kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spotlight-card tilt">
+            <div class="project__visual project__visual--4" aria-hidden="true">
+              <div class="phone">
+                <div class="phone__notch"></div>
+                <div class="phone__card"></div>
+                <div class="phone__card phone__card--sm"></div>
+                <div class="phone__card phone__card--sm"></div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3>Projekt Delta</h3>
+                <span class="project__year">2024</span>
+              </div>
+              <p>Aplikacja mobilna PWA do zarządzania zadaniami z synchronizacją offline.</p>
+              <ul class="tags tags--sm"><li>PWA</li><li>IndexedDB</li><li>Service Worker</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/przemyslawbudzich" target="_blank" rel="noopener">Kod ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOŚWIADCZENIE -->
+    <section class="section" id="doswiadczenie">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">03 — Doświadczenie</span>
+          <h2 class="section__title">Droga, <em class="serif">do tej pory</em>.</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__date">2023 — obecnie</span>
+            <div class="timeline__content">
+              <h3>Senior Software Developer <span>· Firma A</span></h3>
+              <p>Projektowanie i rozwój usług backendowych, mentoring zespołu, odpowiedzialność za architekturę i jakość kodu.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__date">2021 — 2023</span>
+            <div class="timeline__content">
+              <h3>Software Developer <span>· Firma B</span></h3>
+              <p>Rozwój aplikacji webowych full-stack, integracje z zewnętrznymi API, automatyzacja testów i wdrożeń.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__date">2019 — 2021</span>
+            <div class="timeline__content">
+              <h3>Junior Developer <span>· Firma C</span></h3>
+              <p>Pierwsze komercyjne projekty, nauka dobrych praktyk, code review i pracy w metodykach zwinnych.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section contact" id="kontakt">
+      <div class="container">
+        <div class="contact__card reveal spotlight-card">
+          <span class="eyebrow">04 — Kontakt</span>
+          <h2 class="contact__title">
+            Zbudujmy coś<br /><span class="gradient-text">razem</span>.
+          </h2>
+          <p class="contact__lead">Masz pomysł, projekt albo po prostu chcesz pogadać? Odezwij się — odpowiadam szybko.</p>
+
+          <div class="contact__actions">
+            <button class="email-btn magnetic" type="button" data-copy="kontakt@example.com">
+              <span class="email-btn__text">kontakt@example.com</span>
+              <span class="email-btn__hint" data-copy-hint>Kliknij, aby skopiować</span>
+            </button>
+          </div>
+
+          <ul class="socials">
+            <li><a href="https://github.com/przemyslawbudzich" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z" fill="currentColor" stroke="none"/></svg>
+              <span>GitHub</span>
+            </a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" fill="currentColor" stroke="none"/></svg>
+              <span>LinkedIn</span>
+            </a></li>
+            <li><a href="https://gitlab.com/" target="_blank" rel="noopener" aria-label="GitLab">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.6 9.6-.03-.09L20.3.97a.85.85 0 0 0-1.62.06l-2.2 6.75H7.52L5.32 1.03A.85.85 0 0 0 3.7.97L.43 9.5l-.03.09a6.07 6.07 0 0 0 2.01 7.01l.01.01.03.02 4.97 3.73 2.46 1.86 1.5 1.13a1 1 0 0 0 1.22 0l1.5-1.13 2.46-1.86 5-3.75.01-.01a6.07 6.07 0 0 0 2.01-7z" fill="currentColor" stroke="none"/></svg>
+              <span>GitLab</span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span data-year></span> Przemysław Budzich</span>
+      <span class="footer__hint">Naciśnij <kbd>Ctrl</kbd> + <kbd>K</kbd>, aby nawigować</span>
+      <a href="#top" class="footer__top">Do góry ↑</a>
+    </div>
+  </footer>
+
+  <!-- Paleta poleceń -->
+  <div class="cmdk" data-cmdk hidden>
+    <div class="cmdk__backdrop" data-cmdk-close></div>
+    <div class="cmdk__panel" role="dialog" aria-modal="true" aria-label="Paleta poleceń">
+      <div class="cmdk__search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" placeholder="Dokąd chcesz przejść?" data-cmdk-input aria-label="Szukaj" autocomplete="off" />
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="cmdk__list" data-cmdk-list role="listbox"></ul>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
